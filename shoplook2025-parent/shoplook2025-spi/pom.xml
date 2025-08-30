@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.situ</groupId>
+        <artifactId>shoplook2025-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>shoplook2025-spi</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>shoplook2025-brand-spi</module>
+        <module>shoplook2025-category-spi</module>
+        <module>shoplook2025-good-spi</module>
+        <module>shoplook2025-member-spi</module>
+        <module>shoplook2025-user-spi</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.situ</groupId>
+            <artifactId>shoplook2025-core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+</project>

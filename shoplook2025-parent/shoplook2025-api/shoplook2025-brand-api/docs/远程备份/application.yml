@@ -1,0 +1,15 @@
+spring:
+  config:
+    #指定配置文件
+    import: nacos:shoplook2025-brand-api-config.yml
+
+
+  cloud:
+    #远程配置
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: 123456
+        namespace: d362e282-c4ac-4a20-8bb1-730cbc06e458
+        group: shoplook2025-configs

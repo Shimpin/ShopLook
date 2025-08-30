@@ -1,0 +1,39 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: good-api
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shoplook2025?characterEncoding=UTF-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+  cloud:
+    #nacos配置
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: 123456
+        namespace: shoplook2025
+        group: shoplook2025-services
+        ip: 192.168.110.40
+        port: 9002
+
+  devtools:
+    livereload:
+      port: 35702
+
+#mybatis-plus配置，mybatis无需再单独配置
+mybatis-plus:
+  configuration:
+    log-prefix: mybatis.
+    #下划线命名自动转驼峰式
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.situ.shoplook2025.brand.model
+  mapper-locations: classpath*:/mapper/**/*.xml

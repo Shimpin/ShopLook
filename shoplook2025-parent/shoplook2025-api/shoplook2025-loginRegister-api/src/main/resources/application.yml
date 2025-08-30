@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: member-auth-api
+
+  mail:
+    host: smtp.qq.com
+    username: QQ
+    password: 密钥
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connection timeout: 5000
+          timeout: 5000
+          write timeout: 5000
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.110.46:8848
+        username: nacos
+        password: 密码
+        namespace: 44ad37b3-3947-4af3-8f6a-1b6189a46c1c
+        group: shoplook
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shoplook2025?characterEncoding=UTF-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 密码
+
+server:
+  port: 9001
+
+jwt:
+  secret: BqRg2WxlhDo4kD9KZIydB6yVtUbbC8wjnvCyBoRpIGI8A/LEaHbOGMkh7t3fN5g/

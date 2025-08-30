@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: shoplook2025-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: brand-api
+          #注册到nacos上的微服务名称。lb:loadbalancer
+          uri: lb://brand-api
+          #断言
+          predicates:
+            - Path=/api/v1/brands/**
+
+        - id: category-api
+          uri: lb:category-api
+          predicates:
+            - Path=/api/v1/categories/**
+
+      #网关：http:<ip>:<port>/<微服务名称>/xxx/**，自动转发给lb://<微服务名称>/xxx/**
+      discovery:
+        #启动自动路由（动态路由）
+        locator:
+          enabled: true
+          #微服务名称自动转换为小写
+          lower-case-service-id: true
+
+    #nacos配置
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: 123456
+        namespace: shoplook2025
+        group: shoplook2025-services
+        ip: 192.168.110.40
+        port: 8888
+
+server:
+  port: 8888
